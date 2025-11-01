@@ -19,6 +19,7 @@
       margin: 0;
       min-height: 100vh;
     }
+
     header {
       position: fixed;
       top: 0;
@@ -56,10 +57,31 @@
       color: #f97316;
     }
     .member-role { font-size: 1.25rem; }
-    .member-list { font-size: 1.25rem; }
+    .member-list { 
+      font-size: 1.25rem; 
+    }
 
     .title-font {
       font-family: 'Zen Dots', sans-serif;
+    }
+
+    /* Member Box */
+    .member-card {
+      background-color: #1a1a1a;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 4px 6px rgba(255,255,255,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+    .member-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(255,255,255,0.3);
+      border-color: #f97316;
+    }
+    .member-list li {
+      color: #fff;
     }
   </style>
 </head>
@@ -82,7 +104,7 @@
 
     <div class="grid md:grid-cols-3 gap-10">
       
-      <div class="bg-black border border-white/10 rounded-xl p-6 text-center hover:border-orange-400 transition">
+      <div class="member-card">
         <img src="riya.jpg" alt="Riya Halbhavi" class="w-full h-64 object-cover rounded-lg mb-4 border border-white/20">
         <h2 class="font-semibold mb-1 member-name flex items-center justify-center gap-2">
           <span>Riya Halbhavi</span>
@@ -91,13 +113,13 @@
           </svg>
         </h2>
         <p class="text-orange-400 font-medium mb-4 member-role">Product & Technical Lead</p>
-        <ul class="text-left text-gray-300 list-disc list-inside space-y-2 member-list">
+        <ul class="text-left list-disc list-inside space-y-2 member-list">
           <li>Oversees AI, backend, and embedded systems integration.</li>
           <li>Drives technical development of drones, crawlers, and LoRa mesh network.</li>
         </ul>
       </div>
 
-      <div class="bg-black border border-white/10 rounded-xl p-6 text-center hover:border-orange-400 transition">
+      <div class="member-card">
         <img src="vaibhavi.jpg" alt="Vaibhavi Kurinji" class="w-full h-64 object-cover rounded-lg mb-4 border border-white/20">
         <h2 class="font-semibold mb-1 member-name flex items-center justify-center gap-2">
           <span>Vaibhavi Kurinji</span>
@@ -106,13 +128,13 @@
           </svg>
         </h2>
         <p class="text-orange-400 font-medium mb-4 member-role">Marketing & Operations Lead</p>
-        <ul class="text-left text-gray-300 list-disc list-inside space-y-2 member-list">
+        <ul class="text-left list-disc list-inside space-y-2 member-list">
           <li>Leads outreach, partnerships, and dashboard design.</li>
           <li>Specializes in UI/UX, frontend, and data visualization.</li>
         </ul>
       </div>
 
-      <div class="bg-black border border-white/10 rounded-xl p-6 text-center hover:border-orange-400 transition">
+      <div class="member-card">
         <img src="sneha.jpg" alt="Sneha R" class="w-full h-64 object-cover rounded-lg mb-4 border border-white/20">
         <h2 class="font-semibold mb-1 member-name flex items-center justify-center gap-2">
           <span>Sneha R</span>
@@ -121,7 +143,7 @@
           </svg>
         </h2>
         <p class="text-orange-400 font-medium mb-4 member-role">Design Lead</p>
-        <ul class="text-left text-gray-300 list-disc list-inside space-y-2 member-list">
+        <ul class="text-left list-disc list-inside space-y-2 member-list">
           <li>Heads visual identity, UX consistency, and frontend integration.</li>
           <li>Bridges technical design and user experience for field responders.</li>
         </ul>
