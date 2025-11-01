@@ -25,7 +25,19 @@
       color: white;
       margin: 0;
     }
-    section { scroll-snap-align: start; height: 100vh; width: 100%; }
+
+    section {
+      scroll-snap-align: start;
+      height: 100vh;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
 
     /* Navbar */
     header {
@@ -51,12 +63,16 @@
     }
     header nav a:hover { color: #f97316; }
 
-    video { object-fit: contain; height: 100%; width: 100%; }
-
+    /* Videos & Images */
+    video, img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
   </style>
 </head>
-
 <body>
+
   <!-- Navbar -->
   <header>
     <div class="flex items-center">
@@ -68,52 +84,53 @@
     </nav>
   </header>
 
-  <!-- Scroll Slides -->
+  <!-- Slides -->
   <main class="pt-20">
 
-    <!-- Slide 1 (plays only once) -->
-    <section id="home" class="flex items-center justify-center">
-      <video id="slide1-video" src="slide1.mp4" muted playsinline data-aos="fade-up" data-aos-duration="1200"></video>
+    <!-- Slide 1 -->
+    <section id="home" data-aos="fade">
+      <video id="slide1-video" src="slide1.mp4" muted playsinline></video>
     </section>
 
-    <!-- Slide 2 (image) -->
-    <section class="flex items-center justify-center">
-      <img src="slide2.png" alt="Rayvn Slide 2" class="h-full w-full object-contain" data-aos="fade-up" data-aos-duration="1200">
+    <!-- Slide 2 -->
+    <section data-aos="fade">
+      <img src="slide2.png" alt="Rayvn Slide 2">
     </section>
 
-    <!-- Slide 3 (video) -->
-    <section class="flex items-center justify-center">
-      <video src="slide3.mp4" muted playsinline class="slide-video" data-aos="fade-up" data-aos-duration="1200"></video>
+    <!-- Slide 3 -->
+    <section data-aos="fade">
+      <video src="slide3.mp4" muted playsinline></video>
     </section>
 
-    <!-- Slide 4 (video) -->
-    <section class="flex items-center justify-center">
-      <video src="slide4.mp4" muted playsinline class="slide-video" data-aos="fade-up" data-aos-duration="1200"></video>
+    <!-- Slide 4 -->
+    <section data-aos="fade">
+      <video src="slide4.mp4" muted playsinline></video>
     </section>
 
-    <!-- Slide 5 (video) -->
-    <section class="flex items-center justify-center">
-      <video src="slide5.mp4" muted playsinline class="slide-video" data-aos="fade-up" data-aos-duration="1200"></video>
+    <!-- Slide 5 -->
+    <section data-aos="fade">
+      <video src="slide5.mp4" muted playsinline></video>
     </section>
 
-    <!-- Slide 6 (image) -->
-    <section class="flex items-center justify-center">
-      <img src="slide6.png" alt="Rayvn Slide 6" class="h-full w-full object-contain" data-aos="fade-up" data-aos-duration="1200">
+    <!-- Slide 6 -->
+    <section data-aos="fade">
+      <img src="slide6.png" alt="Rayvn Slide 6">
     </section>
 
   </main>
 
-  <!-- Initialize AOS -->
+  <!-- Initialize AOS & Video Autoplay -->
   <script>
-    AOS.init({ once: true, offset: 100, duration: 1000 });
+    AOS.init({ once: true, offset: 0, duration: 1000 });
 
-    // Intersection Observer for videos
     const slide1Video = document.getElementById('slide1-video');
     let slide1Played = false;
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         const video = entry.target;
+
+        if(video.tagName.toLowerCase() !== 'video') return;
 
         // Special case: slide1 plays only once
         if(video.id === 'slide1-video') {
@@ -124,8 +141,7 @@
           }
           return;
         }
-
-        // Other videos: play when visible, pause when not
+        // Play/pause other videos based on visibility
         if(entry.isIntersecting) {
           video.currentTime = 0;
           video.play();
@@ -135,7 +151,6 @@
       });
     }, { threshold: 0.5 });
 
-    // Observe all videos
     document.querySelectorAll('video').forEach(video => observer.observe(video));
   </script>
 
