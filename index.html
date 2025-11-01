@@ -3,77 +3,152 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rayvn | Victim Response and Communication Mesh Bots</title>
+  <title>Rayvn | Autonomous Rescue Network</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
-
-  <!-- AOS (Animate On Scroll) -->
+  <!-- AOS for subtle animations -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
   <style>
-    html {
-      scroll-behavior: smooth;
+    html, body {
+      height: 100%;
+      margin: 0;
       font-family: 'Roboto', sans-serif;
+      background-color: #000;
+      color: #fff;
+      scroll-behavior: smooth;
     }
-    body {
+    main {
       scroll-snap-type: y mandatory;
       overflow-y: scroll;
       height: 100vh;
-      background-color: #000;
-      color: white;
     }
     section {
       scroll-snap-align: start;
       height: 100vh;
+      position: relative;
+    }
+    video, img {
       width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    /* Navbar */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 70px;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1.5rem;
+      z-index: 50;
+    }
+    header img {
+      height: 65px;
+    }
+    header nav a {
+      margin-left: 1.5rem;
+      font-weight: 500;
+      color: #fff;
+      transition: color 0.3s;
+    }
+    header nav a:hover {
+      color: #f97316;
+    }
+    @media (max-width: 768px) {
+      header nav a {
+        margin-left: 1rem;
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
 
 <body>
+
   <!-- Navbar -->
-  <nav class="fixed top-0 left-0 w-full flex justify-between items-center bg-black/70 backdrop-blur-md px-8 py-4 z-50 border-b border-white/10">
-    <div class="flex items-center gap-3">
-      <img src="logo.png" alt="Rayvn Logo" class="h-8 w-8">
+  <header>
+    <div class="flex items-center">
+      <img src="logo.png" alt="Rayvn Logo">
     </div>
-    <ul class="flex gap-8 text-sm font-medium text-white">
-      <li><a href="#home" class="hover:text-orange-400 transition"><b>HOME</b></a></li>
-      <li><a href="#about" class="hover:text-orange-400 transition"><b>ABOUT</b></a></li>
-    </ul>
-  </nav>
+    <nav>
+      <a href="index.html">HOME</a>
+      <a href="about.html">ABOUT</a>
+    </nav>
+  </header>
 
-  <!-- Scroll Slides -->
+  <!-- Content -->
   <main class="pt-16">
+
+    <!-- Slide 1 -->
     <section id="home" class="flex items-center justify-center">
-      <img src="slide1.png" alt="Rayvn Slide 1" class="h-full w-full object-contain" data-aos="fade-up" data-aos-duration="1200">
+      <video src="slide1.mp4" muted playsinline preload="auto"></video>
     </section>
 
-    <section class="flex items-center justify-center">
-      <img src="slide2.png" alt="Rayvn Slide 2" class="h-full w-full object-contain" data-aos="fade-up" data-aos-duration="1200">
+    <!-- Slide 2 -->
+    <section>
+      <img src="slide2.png" alt="Rayvn Slide 2" data-aos="fade-up" data-aos-duration="1200">
     </section>
 
-    <section class="flex items-center justify-center">
-      <img src="slide3.png" alt="Rayvn Slide 3" class="h-full w-full object-contain" data-aos="fade-up" data-aos-duration="1200">
+    <!-- Slide 3 -->
+    <section>
+      <video src="slide3.mp4" muted playsinline preload="auto"></video>
     </section>
 
-    <section id="about" class="flex items-center justify-center">
-      <img src="slide4.png" alt="Rayvn Slide 4" class="h-full w-full object-contain" data-aos="fade-up" data-aos-duration="1200">
+    <!-- Slide 4 -->
+    <section>
+      <video src="slide4.mp4" muted playsinline preload="auto"></video>
     </section>
+
+    <!-- Slide 5 -->
+    <section>
+      <video src="slide5.mp4" muted playsinline preload="auto"></video>
+    </section>
+
+    <!-- Slide 6 -->
+    <section>
+      <img src="slide6.png" alt="Rayvn Slide 6" data-aos="fade-up" data-aos-duration="1200">
+    </section>
+
   </main>
 
-  <!-- Initialize AOS -->
+  <!-- JS: AOS + Video Scroll Behavior -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
-    AOS.init({
-      once: true, // animation triggers only once
-      offset: 100,
-      duration: 1000
+    AOS.init({ once: true, offset: 100, duration: 1000 });
+
+    // Autoplay/freeze logic for videos
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        const video = entry.target;
+        if (entry.isIntersecting) {
+          video.play();
+        } else {
+          video.pause();
+          if (video.currentTime >= video.duration - 0.1) {
+            video.currentTime = video.duration - 0.01;
+          }
+        }
+      });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('video').forEach(video => {
+      video.addEventListener('ended', () => {
+        video.pause();
+        video.currentTime = video.duration - 0.01;
+      });
+      observer.observe(video);
     });
   </script>
+
 </body>
 </html>
-
