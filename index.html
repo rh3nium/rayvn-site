@@ -34,7 +34,7 @@
       width: 100%;
     }
 
-    /* Navbar (matches team.html) */
+    /* Navbar */
     header {
       position: fixed;
       top: 0;
@@ -78,40 +78,60 @@
     </nav>
   </header>
 
-  <!-- Scroll Slides -->
-  <main class="pt-20">
-    <section id="home" class="flex items-center justify-center">
-      <video src="slide1.mp4" autoplay muted loop playsinline class="h-full w-full object-contain" data-aos="fade-up" data-aos-duration="1200"></video>
-    </section>
+ <!-- Scroll Slides -->
+<section id="home" class="flex items-center justify-center">
+  <video id="slide1-video" src="slide1.mp4" muted playsinline class="h-full w-full object-contain" data-aos="fade-up" data-aos-duration="1200"></video>
+</section>
 
-    <section class="flex items-center justify-center">
-      <img src="slide2.png" alt="Rayvn Slide 2" class="h-full w-full object-contain" data-aos="fade-up" data-aos-duration="1200">
-    </section>
+<section class="flex items-center justify-center">
+  <img src="slide2.png" alt="Rayvn Slide 2" class="h-full w-full object-contain" data-aos="fade-up" data-aos-duration="1200">
+</section>
 
-    <section class="flex items-center justify-center">
-      <video src="slide3.mp4" autoplay muted loop playsinline class="h-full w-full object-contain" data-aos="fade-up" data-aos-duration="1200"></video>
-    </section>
+<section class="flex items-center justify-center">
+  <video src="slide3.mp4" muted playsinline class="slide-video h-full w-full object-contain" data-aos="fade-up" data-aos-duration="1200"></video>
+</section>
 
-    <section class="flex items-center justify-center">
-      <video src="slide4.mp4" autoplay muted loop playsinline class="h-full w-full object-contain" data-aos="fade-up" data-aos-duration="1200"></video>
-    </section>
+<section class="flex items-center justify-center">
+  <video src="slide4.mp4" muted playsinline class="slide-video h-full w-full object-contain" data-aos="fade-up" data-aos-duration="1200"></video>
+</section>
 
-    <section class="flex items-center justify-center">
-      <video src="slide5.mp4" autoplay muted loop playsinline class="h-full w-full object-contain" data-aos="fade-up" data-aos-duration="1200"></video>
-    </section>
+<section class="flex items-center justify-center">
+  <video src="slide5.mp4" muted playsinline class="slide-video h-full w-full object-contain" data-aos="fade-up" data-aos-duration="1200"></video>
+</section>
 
-    <section class="flex items-center justify-center">
-      <img src="slide6.png" alt="Rayvn Slide 6" class="h-full w-full object-contain" data-aos="fade-up" data-aos-duration="1200">
-    </section>
-  </main>
+<section class="flex items-center justify-center">
+  <img src="slide6.png" alt="Rayvn Slide 6" class="h-full w-full object-contain" data-aos="fade-up" data-aos-duration="1200">
+</section>
 
-  <!-- Initialize AOS -->
-  <script>
-    AOS.init({
-      once: true,
-      offset: 100,
-      duration: 1000
+<script>
+  const slide1Video = document.getElementById('slide1-video');
+  let slide1Played = false; // Only plays once
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const video = entry.target;
+
+      if(video.id === 'slide1-video') {
+        if(entry.isIntersecting && !slide1Played) {
+          video.currentTime = 0;
+          video.play();
+          slide1Played = true;
+        }
+        return;
+      }
+
+      if(entry.isIntersecting) {
+        video.currentTime = 0;
+        video.play();
+      } else {
+        video.pause();
+      }
     });
-  </script>
+  }, { threshold: 0.5 });
+
+  const videos = document.querySelectorAll('video');
+  videos.forEach(video => observer.observe(video));
+</script>
+
 </body>
 </html>
