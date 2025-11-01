@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rayvn | Victim Response and Communication Mesh Bots</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- AOS (Animate On Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+      font-family: 'Roboto', sans-serif;
+    }
+    body {
+      scroll-snap-type: y mandatory;
+      overflow-y: scroll;
+      height: 100vh;
+      background-color: #000;
+      color: white;
+    }
+    section {
+      scroll-snap-align: start;
+      height: 100vh;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 w-full flex justify-between items-center bg-black/70 backdrop-blur-md px-8 py-4 z-50 border-b border-white/10">
+    <div class="flex items-center gap-3">
+      <img src="logo.png" alt="Rayvn Logo" class="h-8 w-8">
+    </div>
+    <ul class="flex gap-8 text-sm font-medium text-white">
+      <li><a href="#home" class="hover:text-orange-400 transition"><b>HOME</b></a></li>
+      <li><a href="#about" class="hover:text-orange-400 transition"><b>ABOUT</b></a></li>
+    </ul>
+  </nav>
+
+  <!-- Scroll Slides -->
+  <main class="pt-16">
+    <section id="home" class="flex items-center justify-center">
+      <img src="slide1.png" alt="Rayvn Slide 1" class="h-full w-full object-contain" data-aos="fade-up" data-aos-duration="1200">
+    </section>
+
+    <section class="flex items-center justify-center">
+      <img src="slide2.png" alt="Rayvn Slide 2" class="h-full w-full object-contain" data-aos="fade-up" data-aos-duration="1200">
+    </section>
+
+    <section class="flex items-center justify-center">
+      <img src="slide3.png" alt="Rayvn Slide 3" class="h-full w-full object-contain" data-aos="fade-up" data-aos-duration="1200">
+    </section>
+
+    <section id="about" class="flex items-center justify-center">
+      <img src="slide4.png" alt="Rayvn Slide 4" class="h-full w-full object-contain" data-aos="fade-up" data-aos-duration="1200">
+    </section>
+  </main>
+
+  <!-- Initialize AOS -->
+  <script>
+    AOS.init({
+      once: true, // animation triggers only once
+      offset: 100,
+      duration: 1000
+    });
+  </script>
+</body>
+</html>
+
