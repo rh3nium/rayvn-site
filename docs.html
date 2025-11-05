@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Documentation | Rayvn</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Zen+Dots&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      min-height: 100vh;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 80px;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      z-index: 50;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    header img {
+      height: 80px;
+    }
+    header nav a {
+      margin-left: 30px;
+      font-weight: 500;
+      color: #fff;
+      font-size: 24px;
+      transition: color 0.3s;
+    }
+    header nav a:hover {
+      color: #f97316;
+    }
+
+    .title-font {
+      font-family: 'Zen Dots', sans-serif;
+    }
+
+    h2 {
+      color: #f97316;
+      font-family: 'Zen Dots', sans-serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      letter-spacing: 0.03em;
+    }
+
+    p {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.7;
+    }
+
+    pre {
+      background-color: #1a1a1a;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      overflow-x: auto;
+      font-size: 0.9rem;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    code {
+      color: #00ffff;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 1.5rem 0;
+    }
+
+    th, td {
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 0.75rem;
+      text-align: left;
+    }
+
+    th {
+      background-color: #1a1a1a;
+      color: #f97316;
+      font-family: 'Zen Dots', sans-serif;
+    }
+
+    a {
+      color: #00ffff;
+      text-decoration: underline;
+    }
+    a:hover {
+      color: #f97316;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <header>
+    <div class="flex items-center">
+      <img src="logo.png" alt="Rayvn Logo">
+    </div>
+    <nav>
+      <a href="index.html">HOME</a>
+      <a href="team.html">TEAM</a>
+      <a href="docs.html">DOCS</a>
+    </nav>
+  </header>
+
+  <!-- Docs Section -->
+  <main class="pt-32 px-6 md:px-20 lg:px-32 max-w-5xl mx-auto leading-relaxed">
+    <section>
+      <p class="mb-6 text-lg">Rayvn is an IoT-driven autonomous rescue robotics system designed for disaster and crisis response. It combines <b>aerial drones</b> and <b>ground crawler bots</b> connected via a <b>LoRa-based mesh network</b>, enabling offline, real-time victim detection, mapping, and communication in GPS-denied environments.</p>
+      <blockquote class="border-l-4 border-orange-400 pl-4 italic text-gray-300">"Eyes in the sky, hope on the ground."</blockquote>
+    </section>
+
+    <section>
+      <h2>💫 Mission</h2>
+      <p>Rayvn aims to bridge communication gaps during disasters by fusing computer vision, thermal sensing, and AI-driven coordination into a unified rescue network.</p>
+    </section>
+
+    <section>
+      <h2>🧠 Core Features</h2>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Autonomous Pathfinding (A*) — Efficient route generation for rescue navigation.</li>
+        <li>Swarm Coordination — Multi-agent task allocation between aerial and ground units.</li>
+        <li>Sensor Fusion — Combines camera, thermal, and gas/smoke data for robust detection.</li>
+        <li>LoRa Mesh Network — Offline, long-range communication across nodes.</li>
+        <li>AI-Assisted Detection — YOLOv8 + OpenCV victim recognition and hazard detection.</li>
+        <li>Rescue Dashboard — Flask command panel for live mapping and telemetry.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>🧩 System Architecture</h2>
+      <pre><code>
++-----------------------------+
+|       Base Station GUI      |
++-----------------------------+
+           ▲
+           │ LoRa Mesh (Multi-hop)
+           ▼
++-----------------------------+       +-----------------------------+
+|   Aerial Drone Node (ROS)   | <-->  |   Ground Crawler Node (ROS) |
+|  ├─ Perception Node         |       |  ├─ Mapping Node            |
+|  ├─ Path Planner (A*)       |       |  ├─ Motion Controller       |
+|  ├─ Comm Node (LoRa Sim)    |       |  ├─ Comm Node (LoRa Sim)    |
++-----------------------------+       +-----------------------------+
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>🌍 Market Scope</h2>
+      <p>Rayvn addresses a <b>$6B Serviceable Addressable Market (SAM)</b> in global disaster robotics, with an early adoption <b>SOM of $100M</b> across India and Southeast Asia.</p>
+    </section>
+
+    <section>
+      <h2>💰 Revenue Model</h2>
+      <p>Rayvn operates on a <b>B2G + B2B hybrid model</b> — targeting government disaster response agencies, NGOs, and research institutions through solution-based contracts and modular hardware systems.</p>
+      <ul class="list-disc list-inside space-y-2 mt-3">
+        <li><b>Hardware Sales:</b> Revenue from modular drone and crawler units, LoRa kits, and base station hardware.</li>
+        <li><b>Software Licensing:</b> Subscription for the AI dashboard, analytics platform, and rescue coordination tools.</li>
+        <li><b>Maintenance & Training:</b> Annual service contracts and technician training programs for field teams.</li>
+        <li><b>Custom Deployments:</b> Tailored solutions for defense research, smart city, and humanitarian applications.</li>
+        <li><b>Data & Insights:</b> Secure analytics for partner agencies on disaster pattern recognition and post-event mapping.</li>
+      </ul>
+      <p class="mt-3 text-gray-300">Revenue streams will scale alongside pilot deployments, government partnerships, and university research collaborations.</p>
+    </section>
+
+    <section>
+      <h2>⚙️ Tech Stack</h2>
+      <p><b>Languages:</b> Python, C, C++<br>
+      <b>Frameworks:</b> ROS, OpenCV, Flask, PyTorch<br>
+      <b>Hardware:</b> Raspberry Pi, LoRa modules, thermal sensors<br>
+      <b>Simulation:</b> Gazebo, RViz<br>
+      <b>Communication:</b> LoRa Mesh, MQTT<br>
+      <b>Tools:</b> Git, Docker, Linux</p>
+    </section>
+
+    <section>
+      <h2>🤝 Links</h2>
+      <p>
+        🌐 <a href="https://rayvn.tech" target="_blank">Website</a><br>
+        🔗 <a href="https://www.linkedin.com/company/rayvn-ai" target="_blank">LinkedIn</a><br>
+        💻 <a href="https://github.com/rh3nium/rayvn" target="_blank">GitHub</a>
+      </p>
+    </section>
+
+    <p class="mt-12 text-gray-400 text-center italic">Rayvn — Resilience. Awareness. Autonomy.<br>When networks fall silent, our bots keep hope alive.</p>
+  </main>
+</body>
+</html>
