@@ -12,7 +12,6 @@
       background-color: #000;
       color: white;
       margin: 105px 50px 60px 50px; /* top right bottom left */
-      margin: 105px 50px 60px 50px;
       min-height: 100vh;
       font-family: 'Roboto', sans-serif;
     }
@@ -32,11 +31,9 @@
       z-index: 50;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
-
     header img {
       height: 80px;
     }
-
     header nav a {
       margin-left: 30px;
       font-weight: 500;
@@ -44,7 +41,6 @@
       font-size: 24px;
       transition: color 0.3s;
     }
-
     header nav a:hover {
       color: #f97316;
     }
@@ -62,8 +58,6 @@
       line-height: 1.3;
     }
     p {
-
-    p, ul {
       font-family: 'Roboto', sans-serif;
       line-height: 1.8;
       font-size: 20px;
@@ -77,7 +71,6 @@
       font-size: 0.9rem;
       border: 1px solid rgba(255,255,255,0.1);
     }
-
     code {
       color: #00ffff;
     }
@@ -91,67 +84,22 @@
       border: 1px solid rgba(255,255,255,0.1);
       padding: 0.75rem;
       text-align: left;
-    a {
-      color: #00ffff;
-      text-decoration: none;
     }
     th {
       background-color: #1a1a1a;
-
-    a:hover {
       color: #f97316;
       font-family: 'Zen Dots', sans-serif;
     }
     ul {
       font-size: 20px;
-
-    hr {
-      border: none;
-      height: 1px;
-      background: rgba(255, 255, 255, 0.1);
-      margin: 40px 0;
     }
 
     a {
       color: #00ffff;
       text-decoration: none;
-    /* Tech Stack Grid */
-    .tech-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      margin: 50px auto;
-      max-width: 1200px;
-      padding: 0 20px;
     }
     a:hover {
-
-    .tech-card {
-      background: #111;
-      border: 1px solid #222;
-      border-radius: 15px;
-      padding: 25px;
-      text-align: center;
-      transition: all 0.3s ease;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
-    }
-
-    .tech-card:hover {
-      border-color: #f97316;
-      box-shadow: 0 0 20px rgba(249, 115, 22, 0.3);
-      transform: translateY(-5px);
-    }
-
-    .tech-card h3 {
       color: #f97316;
-      margin-bottom: 10px;
-      font-size: 22px;
-    }
-
-    .tech-card p {
-      font-size: 18px;
-      color: #ccc;
-      line-height: 1.6;
     }
 
     /* Social Icons */
@@ -165,17 +113,13 @@
       gap: 20px;
       color: white;
     }
-
     .social-icons a {
       color: white;
       transition: color 0.3s ease;
     }
-
     .social-icons a:hover {
       color: #00FFFF;
-      color: #00ffff;
     }
-
     .social-icons svg {
       width: 30px;
       height: 30px;
@@ -187,7 +131,6 @@
   <!-- Navbar -->
   <header>
     <div class="flex items-center">
-    <div>
       <img src="logo.png" alt="Rayvn Logo">
     </div>
     <nav>
@@ -199,28 +142,22 @@
 
   <!-- Doc Section -->
   <main class="pt-32 px-6 md:px-20 lg:px-32 max-w-5xl mx-auto leading-relaxed">
-  <main>
     <section>
       <p style="font-size: 24px;"><b>Rayvn is an IoT-driven autonomous rescue robotics system designed for disaster and crisis response. It combines <span style="font-color: orange; font-size: 24px;">aerial drones</span> and <span style="font-color: orange; font-size: 24px;">ground crawler bots</span> connected via a <span style="font-color: orange; font-size: 24px;">LoRa-based mesh network</span>, enabling offline, real-time victim detection, mapping, and communication in GPS-denied environments.</b></p>
       <div style="text-align: center; margin-top: 20px;">
+        <img src="articles.png" alt="News Articles" style="height: 600px; width: auto;">
         <img src="articles.png" alt="News Articles" style="height: 630px; width: auto;">
       </div>
-      <p style="font-size: 24px;"><b>Rayvn is an IoT-driven autonomous rescue robotics system designed for disaster and crisis response. It combines <span style="color: orange;">aerial drones</span> and <span style="color: orange;">ground crawler bots</span> connected via a <span style="color: orange;">LoRa-based mesh network</span>, enabling offline, real-time victim detection, mapping, and communication in GPS-denied environments.</b></p>
     </section>
-
-    <hr>
 
     <section>
       <h2>💫 Mission</h2>
       <p>Rayvn aims to bridge communication gaps during disasters by fusing computer vision, thermal sensing, and AI-driven coordination into a unified rescue network.</p>
     </section>
 
-    <hr>
-
     <section>
       <h2>🧠 Core Features</h2>
       <ul class="list-disc list-inside space-y-2">
-      <ul>
         <li>Autonomous Pathfinding (A*) — Efficient route generation for rescue navigation.</li>
         <li>Swarm Coordination — Multi-agent task allocation between aerial and ground units.</li>
         <li>Sensor Fusion — Combines camera, thermal, and gas/smoke data for robust detection.</li>
@@ -229,8 +166,6 @@
         <li>Rescue Dashboard — Flask command panel for live mapping and telemetry.</li>
       </ul>
     </section>
-
-    <hr>
 
     <section>
       <h2>🧩 System Architecture</h2>
@@ -267,7 +202,6 @@
       </ul>
       <p class="mt-3 text-gray-300">Revenue streams will scale alongside pilot deployments, government partnerships, and university research collaborations.</p>
     </section>
-    <hr>
 
     <section>
       <h2>⚙️ Tech Stack</h2>
@@ -277,58 +211,7 @@
       <b>Simulation:</b> Gazebo, RViz<br>
       <b>Communication:</b> LoRa Mesh, MQTT<br>
       <b>Tools:</b> Git, Docker, Linux</p>
-      <div class="tech-grid">
-        <div class="tech-card">
-          <h3>🐍 Languages</h3>
-          <p>Python, C, C++, Bash</p>
-        </div>
-
-        <div class="tech-card">
-          <h3>🧱 Frameworks & Libraries</h3>
-          <p>ROS, OpenCV, Flask, PyTorch</p>
-        </div>
-
-        <div class="tech-card">
-          <h3>🔩 Hardware</h3>
-          <p>Raspberry Pi 4 / Pi Zero 2 W, LoRa Modules, Thermal, Gas, Smoke & Sound Sensors, Drone Unit</p>
-        </div>
-
-        <div class="tech-card">
-          <h3>🧪 Simulation & Testing</h3>
-          <p>Gazebo, RViz, Python Notebooks</p>
-        </div>
-
-        <div class="tech-card">
-          <h3>📡 Communication</h3>
-          <p>LoRa Mesh, MQTT, REST APIs</p>
-        </div>
-
-        <div class="tech-card">
-          <h3>🧰 Development Tools</h3>
-          <p>Git, Docker, Linux, VS Code</p>
-        </div>
-      </div>
-
-      <h2>⚡ Future Additions</h2>
-      <div class="tech-grid">
-        <div class="tech-card">
-          <h3>🧠 Edge Computing</h3>
-          <p>Google Coral TPU for on-device ML inference</p>
-        </div>
-
-        <div class="tech-card">
-          <h3>⚡ AI Hardware</h3>
-          <p>NVIDIA Jetson Nano / Orin Nano for advanced real-time AI</p>
-        </div>
-
-        <div class="tech-card">
-          <h3>🌐 Scalability</h3>
-          <p>Kubernetes / K3s for distributed node orchestration</p>
-        </div>
-      </div>
     </section>
-
-    <hr>
 
     <section>
       <h2>🤝 Links</h2>
@@ -339,9 +222,6 @@
     </section>
 
     <p class="mt-12 text-gray-400 text-center italic">When networks fall silent, our bots keep hope alive.</p>
-    <p style="text-align:center; color:#888; margin-top:40px; font-style:italic;">
-      When networks fall silent, our bots keep hope alive.
-    </p>
   </main>
 
   <!-- Social Icons -->
@@ -363,7 +243,6 @@
     </a>
     <!-- GitHub -->
     <a href="https://github.com/rh3nium/rayvn" target="_blank" rel="noopener noreferrer">
-    <a href="https://github.com/rh3nium/rayvn" target="_blank">
       <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
         <path d="M12 .297c-6.63 0-12 5.373-12 
         12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 
