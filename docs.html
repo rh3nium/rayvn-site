@@ -93,14 +93,26 @@
       margin: 40px 0;
     }
 
-    /* Tech Stack Grid */
+    /* Hero image */
+    .hero-img {
+      display: block;
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.08);
+      margin-bottom: 40px;
+    }
+
+    /* Tech Stack Horizontal Layout */
     .tech-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      margin: 50px auto;
-      max-width: 1200px;
-      padding: 0 20px;
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 20px;
+      overflow-x: auto;
+      margin: 30px 0;
+      padding-bottom: 10px;
+      scrollbar-width: thin;
     }
 
     .tech-card {
@@ -108,9 +120,11 @@
       border: 1px solid #222;
       border-radius: 15px;
       padding: 25px;
-      text-align: center;
+      min-width: 250px;
+      text-align: left;
       transition: all 0.3s ease;
       box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+      flex: 0 0 auto;
     }
 
     .tech-card:hover {
@@ -170,6 +184,9 @@
   </header>
 
   <main>
+    <!-- Hero Section -->
+    <img src="articles.png" alt="Rayvn Overview" class="hero-img">
+
     <section>
       <p style="font-size: 24px;"><b>Rayvn is an IoT-driven autonomous rescue robotics system designed for disaster and crisis response. It combines <span style="color: orange;">aerial drones</span> and <span style="color: orange;">ground crawler bots</span> connected via a <span style="color: orange;">LoRa-based mesh network</span>, enabling offline, real-time victim detection, mapping, and communication in GPS-denied environments.</b></p>
     </section>
@@ -224,45 +241,38 @@
           <h3>🐍 Languages</h3>
           <p>Python, C, C++, Bash</p>
         </div>
-
         <div class="tech-card">
           <h3>🧱 Frameworks & Libraries</h3>
           <p>ROS, OpenCV, Flask, PyTorch</p>
         </div>
-
         <div class="tech-card">
           <h3>🔩 Hardware</h3>
           <p>Raspberry Pi 4 / Pi Zero 2 W, LoRa Modules, Thermal, Gas, Smoke & Sound Sensors, Drone Unit</p>
         </div>
-
         <div class="tech-card">
           <h3>🧪 Simulation & Testing</h3>
           <p>Gazebo, RViz, Python Notebooks</p>
         </div>
-
         <div class="tech-card">
           <h3>📡 Communication</h3>
           <p>LoRa Mesh, MQTT, REST APIs</p>
         </div>
-
         <div class="tech-card">
           <h3>🧰 Development Tools</h3>
           <p>Git, Docker, Linux, VS Code</p>
         </div>
       </div>
 
-      <h2>⚡ Future Additions</h2>
+      <h2>🚀 Future Additions</h2>
       <div class="tech-grid">
         <div class="tech-card">
           <h3>🧠 Edge Computing</h3>
           <p>Google Coral TPU for on-device ML inference</p>
         </div>
-
         <div class="tech-card">
           <h3>⚡ AI Hardware</h3>
           <p>NVIDIA Jetson Nano / Orin Nano for advanced real-time AI</p>
         </div>
-
         <div class="tech-card">
           <h3>🌐 Scalability</h3>
           <p>Kubernetes / K3s for distributed node orchestration</p>
