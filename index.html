@@ -155,16 +155,12 @@
 
     <script>
     AOS.init({ once: true, offset: 0, duration: 1000 });
-
     const slide1Video = document.getElementById('slide1-video');
     let slide1Played = false;
-
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         const video = entry.target;
-
         if(video.tagName.toLowerCase() !== 'video') return;
-
         // Special case: slide1 plays only once
         if(video.id === 'slide1-video') {
           if(entry.isIntersecting && !slide1Played) {
@@ -183,7 +179,6 @@
         }
       });
     }, { threshold: 0.5 });
-
     document.querySelectorAll('video').forEach(video => observer.observe(video));
   </script>
 
