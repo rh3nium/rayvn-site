@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | Rayvn Tech</title>
+    <link rel="icon" type="image/png" href="logo.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Zen+Dots&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000;
+            color: white;
+            margin: 40px 50px 60px 50px;
+            min-height: 100vh;
+            font-family: 'Roboto', sans-serif;
+        }
+        .title-font {
+            font-family: 'Zen Dots', sans-serif;
+        }
+        h2 {
+            color: orange;
+            font-family: 'Zen Dots', sans-serif;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            letter-spacing: 0.03em;
+            line-height: 1.3;
+        }
+        h3 {
+            color: #00ffff;
+            font-family: 'Roboto Condensed', sans-serif;
+            font-weight: 700;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        p {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.8;
+            font-size: 20px;
+        }
+        ul {
+            font-size: 20px;
+        }
+        a {
+            color: #00ffff;
+            text-decoration: none;
+        }       
+        a:hover {
+            color: #f97316;
+        }
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            z-index: 50;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .header-logo-container {
+            display: flex;
+            align-items: center;
+        }
+        header img {
+            height: 80px;
+        }
+        header nav a {
+            margin-left: 30px;
+            font-family: 'Roboto Condensed', sans-serif;
+            font-weight: 400;  
+            color: #fff;
+            font-size: 24px;
+            transition: color 0.3s;
+        }       
+        header nav a:hover {
+            color: #f97316;
+        }
+        /* Main Content & Layout */
+        .main-content {
+            padding-top: 70px;
+            padding-left: 24px;
+            padding-right: 24px;
+            max-width: 1024px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.625;
+        }       
+        @media (min-width: 768px) {
+            .main-content {
+                padding-left: 80px;
+                padding-right: 80px;
+            }
+        }       
+        @media (min-width: 1024px) {
+            .main-content {
+                padding-left: 128px;
+                padding-right: 128px;
+            }
+        }
+        /* Code/Table */
+        .doc-list {
+            list-style-type: disc;
+            list-style-position: inside;
+            margin-top: 0.5rem;
+        }       
+        .doc-list li {
+            margin-bottom: 0.5rem;
+        }
+        /* Utility and Helper Classes */
+        .section-divider {
+            border: 0;
+            height: 1px;
+            background-color: #333;
+            margin: 3rem 0;
+        }
+        .mt-3 {
+            margin-top: 0.75rem;
+        }       
+        .mt-12 {
+            margin-top: 3rem;
+        }
+        .text-muted {
+            color: #9ca3af;
+        }       
+        .text-center {
+            text-align: center;
+        }       
+        .italic-text {
+            font-style: italic;
+        }
+        /* Social Icons */
+        .social-icons {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            display: flex;
+            gap: 20px;
+            color: white;
+        }       
+        .social-icons a {
+            color: white;
+            transition: color 0.3s ease;
+        }       
+        .social-icons a:hover {
+            color: #00FFFF;
+        }       
+        .social-icons svg {
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-logo-container">
+            <img src="logo.png" alt="Rayvn Logo">
+        </div>
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="docs.html">DOCUMENTATION</a>
+            <a href="about.html">ABOUT</a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section>
+            <h2 style="font-size: 36px; text-align: center;">About Rayvn Tech: Robotics for Resilient Communities</h2>
+            <p>Rayvn Tech was founded on the belief that <i>cutting-edge robotics and AI</i> should be leveraged to protect human life and build resilient communities in the face of disaster. Our journey began with a focus on solving the critical problem of <i>communication blackouts</i> and <i>inaccessible debris fields</i> following catastrophic events.</p>
+            <p>We combine deep expertise in swarm robotics, computer vision, and secure mesh networking to deliver the most robust autonomous rescue system available.</p>
+        </section>
+        
+        <hr class="section-divider">
+
+        <section>
+            <h2>✨ Our Vision</h2>
+            <p>To establish the Rayvn autonomous rescue system as the global standard for initial disaster response, empowering first responders and humanitarian organizations to operate safely and effectively anywhere in the world, regardless of infrastructure damage.</p>
+        </section>
+
+        <hr class="section-divider">
+        
+        <section>
+            <h2>🤝 Core Values</h2>
+            <ul class="doc-list">
+                <li><i>Safety First:</i> Prioritizing the preservation of human life and the safety of rescue personnel above all else.</li>
+                <li><i>Innovation:</i> Continuously pushing the boundaries of autonomous systems, AI, and secure communication technology.</li>
+                <li><i>Reliability:</i> Engineering systems to perform flawlessly in the most extreme and compromised environments.</li>
+                <li><i>Accessibility:</i> Working to make advanced robotic solutions affordable and deployable by organizations globally.</li>
+            </ul>
+        </section>
+
+        <hr class="section-divider">
+
+        <section>
+            <h2>🌎 Our Team and Structure</h2>
+            <p>Rayvn Tech is a dynamic group of students and specialists dedicated to humanitarian technology. Our structure is organized around our core technical domains:</p>
+            
+            <h3>Autonomous Systems & ROS</h3>
+            <p>Responsible for the <i>A* pathfinding</i>, swarm coordination, and low-level control of the aerial drones and ground crawlers.</p>
+            
+            <h3>AI and Perception</h3>
+            <p>Focuses on <i>YOLOv8 victim detection</i>, sensor fusion (thermal/visual data), and environmental hazard assessment.</p>
+            
+            <h3>Secure Communications (LoRa)</h3>
+            <p>Manages the <i>offline mesh network</i> architecture, ensuring reliable, multi-hop data transmission in GPS-denied zones.</p>
+            
+            <h3>Base Station & Dashboard</h3>
+            <p>Develops the <i>Flask command panel</i> for real-time telemetry, mapping, and user interaction in the field.</p>
+        </section>
+
+        <hr class="section-divider">
+
+        <p class="mt-12 text-muted text-center italic-text">Technology driven by compassion. Action powered by autonomy.</p><br>
+    </main>
+    
+    <div class="social-icons">
+        <a href="https://www.linkedin.com/in/rayvn-tech-424796390/" target="_blank" rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.804-1.75-1.732s.784-1.732 1.75-1.732 1.75.804 1.75 1.732-.784 1.732-1.75 1.732zm13.5 11.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-10h3v1.528c1.396-2.586 7-2.777 7 2.476v5.996z"/>
+            </svg>
+        </a>
+        <a href="https://github.com/Rayvn-Tech" target="_blank" rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.809 1.304 3.495.997.108-.776.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23a11.52 11.52 0 0 1 3.003-.404 11.52 11.52 0 0 1 3.003.404c2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.435.375.81 1.102.81 2.222 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+            </svg>
+        </a>
+    </div>
+</body>
+</html>
