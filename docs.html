@@ -1,297 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Documentation | Rayvn Tech</title>
-    <link rel="icon" type="image/png" href="logo.png" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Zen+Dots&display=swap" rel="stylesheet">
-    <style>
-        body {
-            background-color: #000;
-            color: white;
-            margin: 40px 50px 60px 50px;
-            min-height: 100vh;
-            font-family: 'Roboto', sans-serif;
-        }
-        .title-font {
-            font-family: 'Zen Dots', sans-serif;
-        }
-        h2 {
-            color: orange;
-            font-family: 'Zen Dots', sans-serif;
-            font-weight: 600;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            letter-spacing: 0.03em;
-            line-height: 1.3;
-        }
-        p {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.8;
-            font-size: 20px;
-        }
-        ul {
-            font-size: 20px;
-        }
-        a {
-            color: #00ffff;
-            text-decoration: none;
-        }        
-        a:hover {
-            color: #f97316;
-        }
-        /* Header */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 80px;
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(10px);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 40px;
-            z-index: 50;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .header-logo-container {
-            display: flex;
-            align-items: center;
-        }
-        header img {
-            height: 80px;
-        }
-        header nav a {
-            margin-left: 30px;
-            font-family: 'Roboto Condensed', sans-serif;
-            font-weight: 400; 
-            color: #fff;
-            font-size: 24px;
-            transition: color 0.3s;
-        }        
-        header nav a:hover {
-            color: #f97316;
-        }
-        /* Main Content & Layout */
-        .main-content {
-            padding-top: 70px;
-            padding-left: 24px;
-            padding-right: 24px;
-            max-width: 1024px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.625;
-        }        
-        @media (min-width: 768px) {
-            .main-content {
-                padding-left: 80px;
-                padding-right: 80px;
-            }
-        }        
-        @media (min-width: 1024px) {
-            .main-content {
-                padding-left: 128px;
-                padding-right: 128px;
-            }
-        }
-        /* Code/Table */
-        pre {
-            background-color: #1a1a1a;
-            padding: 1rem;
-            border-radius: 0.5rem;
-            overflow-x: auto;
-            font-size: 0.9rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        code {
-            color: #00ffff;
-        }
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            margin: 1.5rem 0;
-        }        
-        th, td {
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 0.75rem;
-            text-align: left;
-        }        
-        th {
-            background-color: #1a1a1a;
-            color: #f97316;
-            font-family: 'Zen Dots', sans-serif;
-        }
-        
-        .doc-list {
-            list-style-type: disc;
-            list-style-position: inside;
-            margin-top: 0.5rem;
-        }        
-        .doc-list li {
-            margin-bottom: 0.5rem;
-        }
-        /* Utility and Helper Classes */
-        .section-divider {
-            border: 0;
-            height: 1px;
-            background-color: #333;
-            margin: 3rem 0;
-        }
-        .mt-3 {
-            margin-top: 0.75rem;
-        }      
-        .mt-12 {
-            margin-top: 3rem;
-        }
-        .text-muted {
-            color: #9ca3af;
-        }       
-        .text-center {
-            text-align: center;
-        }       
-        .italic-text {
-            font-style: italic;
-        }
-        /* Social Icons */
-        .social-icons {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 100;
-            display: flex;
-            gap: 20px;
-            color: white;
-        }        
-        .social-icons a {
-            color: white;
-            transition: color 0.3s ease;
-        }        
-        .social-icons a:hover {
-            color: #00FFFF;
-        }        
-        .social-icons svg {
-            width: 30px;
-            height: 30px;
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Documentation | Rayvn Tech</title>
+<link rel="icon" type="image/png" href="logo.png" />
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Zen+Dots&display=swap" rel="stylesheet">
+<style>
+body { background:#000; color:white; margin:40px 50px 60px; font-family:'Roboto',sans-serif; }
+h2 { color:orange; font-family:'Zen Dots'; margin-top:2rem; }
+p,ul { font-size:20px; line-height:1.7; }
+ul { margin-left:1rem; }
+pre { background:#1a1a1a; padding:1rem; border-radius:8px; overflow-x:auto; }
+header { position:fixed; top:0; left:0; right:0; height:80px; background:rgba(0,0,0,0.7); backdrop-filter:blur(10px); display:flex; align-items:center; justify-content:space-between; padding:0 40px; border-bottom:1px solid rgba(255,255,255,0.1); }
+header img { height:80px; }
+header nav a { margin-left:30px; color:white; font-size:24px; font-family:'Roboto Condensed'; text-decoration:none; }
+header nav a:hover { color:#f97316; }
+.main-content { padding-top:100px; max-width:1024px; margin:auto; }
+.section-divider { border:0; height:1px; background:#333; margin:3rem 0; }
+a { color:#00ffff; text-decoration:none; }
+a:hover { color:#f97316; }
+</style>
 </head>
-
 <body>
-    <header>
-        <div class="header-logo-container">
-            <img src="logo.png" alt="Rayvn Logo">
-        </div>
-        <nav>
-            <a href="index.html">HOME</a>
-            <a href="docs.html">DOCUMENTATION</a>
-            <a href="about.html">ABOUT</a>
-        </nav>
-    </header>
-
-    <main class="main-content">
-        <section>
-            <h2 style="font-size: 24px;"><b>Rayvn is an IoT-driven autonomous rescue robotics system designed for disaster and crisis response. It combines <span style="color: orange; font-size: 24px;">aerial drones</span> and <span style="color: orange; font-size: 24px;">ground crawler bots</span> connected via a <span style="color: orange; font-size: 24px;">LoRa-based mesh network</span>, enabling offline, real-time victim detection, mapping, and communication in GPS-denied environments.</b></h2>
-            <div style="text-align: center; margin-top: 30px;">
-                <img src="articles.png" alt="News Articles" style="height: 630px; width: auto; max-width: 100%;">
-            </div>
-        </section>
-        <hr class="section-divider">
-        <section>
-            <h2>💫 Mission</h2>
-            <p>Rayvn aims to bridge communication gaps during disasters by fusing computer vision, thermal sensing, and AI-driven coordination into a unified rescue network.</p>
-        </section>
-        <hr class="section-divider">
-        <section>
-            <h2>🧠 Core Features</h2>
-            <ul class="doc-list">
-                <li>Autonomous Pathfinding (A*) — Efficient route generation for rescue navigation.</li>
-                <li>Swarm Coordination — Multi-agent task allocation between aerial and ground units.</li>
-                <li>Sensor Fusion — Combines camera, thermal, and gas/smoke data for robust detection.</li>
-                <li>LoRa Mesh Network — Offline, long-range communication across nodes.</li>
-                <li>AI-Assisted Detection — YOLOv8 + OpenCV victim recognition and hazard detection.</li>
-                <li>Rescue Dashboard — Flask command panel for live mapping and telemetry.</li>
-            </ul>
-        </section>
-
-        <hr class="section-divider">
-
-        <section>
-            <h2>🧩 System Architecture</h2>
-            <pre><code>
+<header>
+<div><img src="logo.png" alt="Rayvn Logo"></div>
+<nav>
+<a href="index.html">HOME</a>
+<a href="docs.html">DOCUMENTATION</a>
+<a href="about.html">ABOUT</a>
+</nav>
+</header>
+<main class="main-content">
+<section>
+<h2>Overview</h2>
+<p><b>Rayvn is an IoT-driven autonomous rescue robotics system</b> combining aerial drones and rugged legged ground crawlers connected via a <b>LoRa-based mesh network</b>. It enables <b>offline, real-time victim and animal detection, mapping, and communication</b> in GPS-denied environments.<br><br><i>“Eyes in the sky, hope on the ground.”</i></p>
+<img src="articles.png" alt="Articles" style="width:100%;max-width:700px;display:block;margin:auto;">
+</section>
+<hr class="section-divider">
+<section>
+<h2>Mission</h2>
+<p>Rayvn bridges visibility and communication gaps during disasters using computer vision, thermal sensing, swarm AI, and autonomous robotics — improving situational awareness when every second matters.</p>
+</section>
+<hr class="section-divider">
+<section>
+<h2>Problem Statement</h2>
+<p>Disasters often destroy communication networks, obscure visibility, and create dangerous environments for rescuers. Traditional search missions rely heavily on manual detection and slow, unreliable information flow.<br><br>Rayvn solves this with an <b>autonomous, self-healing rescue mesh</b> capable of mapping survivors and hazards <b>fully offline</b>.</p>
+</section>
+<hr class="section-divider">
+<section>
+<h2>Real-World Applications</h2>
+<ul>
+<li>Disaster Response: earthquakes, floods, landslides</li>
+<li>Defense & Search Ops in GPS-denied zones</li>
+<li>Wildlife conservation & species monitoring</li>
+<li>Industrial safety: gas leaks, heat mapping</li>
+<li>Smart city underground inspection</li>
+</ul>
+</section>
+<hr class="section-divider">
+<section>
+<h2>Workflow</h2>
+<ul>
+<li><b>Drone Scan:</b> Drone performs aerial survey using RGB + thermal imaging.</li>
+<li><b>Hotspot Detection:</b> YOLO + OpenCV detect heat signatures, motion, or human shapes.</li>
+<li><b>Crawler Deployment:</b> Drone deploys legged crawlers to navigate rubble and tight passages.</li>
+<li><b>Mesh Formation:</b> Crawlers form an autonomous LoRa mesh network.</li>
+<li><b>Mapping & Detection:</b> Crawlers scan areas using thermal, gas, smoke, and audio sensors.</li>
+<li><b>Dashboard Sync:</b> Data forms heatmaps and hazard clusters on the base station GUI.</li>
+<li><b>Drone Redeploy/Exit:</b> Depending on battery + mesh stability, drone stays, redeploys, or exits.</li>
+</ul>
+</section>
+<hr class="section-divider">
+<section>
+<h2>Core Features</h2>
+<ul>
+<li>Autonomous Pathfinding (A*)</li>
+<li>Swarm coordination (drone + crawlers)</li>
+<li>Thermal + camera + gas + audio sensor fusion</li>
+<li>LoRa-based offline mesh network</li>
+<li>AI victim detection (YOLOv8 + OpenCV)</li>
+<li>Live rescue dashboard with telemetry</li>
+</ul>
+</section>
+<hr class="section-divider">
+<section>
+<h2>System Architecture</h2>
+<pre><code>
 +-----------------------------+
-|     Base Station GUI      |
+|       Base Station GUI      |
 +-----------------------------+
               ▲
-              │ LoRa Mesh (Multi-hop)
+              │  LoRa Mesh (Multi-hop)
               ▼
-+-----------------------------+       +-----------------------------+
-|   Aerial Drone Node (ROS)   | <-->  |   Ground Crawler Node (ROS) |
-|   ├─ Perception Node        |       |   ├─ Mapping Node           |
-|   ├─ Path Planner (A*)      |       |   ├─ Motion Controller      |
-|   ├─ Comm Node (LoRa Sim)   |       |   ├─ Comm Node (LoRa Sim)   |
-+-----------------------------+       +-----------------------------+
-      </code></pre>
-        </section>
-
-        <hr class="section-divider">
-
-        <section>
-            <h2>🌍 Market Scope</h2>
-            <p>Rayvn addresses a <b>$6B Serviceable Addressable Market (SAM)</b> in global disaster robotics, with an early adoption <b>SOM of $100M</b> across India and Southeast Asia.</p>
-        </section>
-        <hr class="section-divider">
-        <section>
-            <h2>💰 Revenue Model</h2>
-            <p>Rayvn operates on a <b>B2G + B2B hybrid model</b> — targeting government disaster response agencies, NGOs, and research institutions through solution-based contracts and modular hardware systems.</p>
-            <ul class="doc-list mt-3">
-                <li><b>Hardware Sales:</b> Revenue from modular drone and crawler units, LoRa kits, and base station hardware.</li>
-                <li><b>Software Licensing:</b> Subscription for the AI dashboard, analytics platform, and rescue coordination tools.</li>
-                <li><b>Maintenance & Training:</b> Annual service contracts and technician training programs for field teams.</li>
-                <li><b>Custom Deployments:</b> Tailored solutions for defense research, smart city, and humanitarian applications.</li>
-                <li><b>Data & Insights:</b> Secure analytics for partner agencies on disaster pattern recognition and post-event mapping.</li>
-            </ul>
-            <p class="mt-3 text-muted">Revenue streams will scale alongside pilot deployments, government partnerships, and university research collaborations.</p>
-        </section>
-
-        <hr class="section-divider">
-
-        <section>
-            <h2>⚙️ Tech Stack</h2>
-            <p><b>Languages:</b> Python, C, C++<br>
-                <b>Frameworks:</b> ROS, OpenCV, Flask, PyTorch<br>
-                <b>Hardware:</b> Raspberry Pi, LoRa modules, thermal sensors<br>
-                <b>Simulation:</b> Gazebo, RViz<br>
-                <b>Communication:</b> LoRa Mesh, MQTT<br>
-                <b>Tools:</b> Git, Docker, Linux</p>
-        </section>
-
-        <hr class="section-divider">
-
-        <section>
-            <h2>🤝 Links</h2>
-            <p>
-                🔗 <a href="https://www.linkedin.com/in/rayvn-tech-424796390/" target="_blank">LinkedIn</a><br>
-                💻 <a href="https://github.com/Rayvn-Tech" target="_blank">GitHub</a>
-            </p>
-        </section>
-        <p class="mt-12 text-muted text-center italic-text">When networks go silent, our bots speak.</p><br>
-    </main>
-    
-    <div class="social-icons">
-        <a href="https://www.linkedin.com/in/rayvn-tech-424796390/" target="_blank" rel="noopener noreferrer">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.804-1.75-1.732s.784-1.732 1.75-1.732 1.75.804 1.75 1.732-.784 1.732-1.75 1.732zm13.5 11.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-10h3v1.528c1.396-2.586 7-2.777 7 2.476v5.996z"/>
-            </svg>
-        </a>
-        <a href="https://github.com/Rayvn-Tech" target="_blank" rel="noopener noreferrer">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.089-.745.083-.729.083-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.809 1.304 3.495.997.108-.776.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23a11.52 11.52 0 0 1 3.003-.404 11.52 11.52 0 0 1 3.003.404c2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.435.375.81 1.102.81 2.222 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
-            </svg>
-        </a>
-    </div>
++-----------------------------+        +-----------------------------+        +-----------------------------+
+|   Aerial Drone Node (ROS)   | <----> | Ground Crawler Node A (ROS) | <----> | Ground Crawler Node B (ROS) |
+|   ├─ Perception Node        |        |   ├─ Mapping Node           |        |   ├─ Mapping Node           |
+|   ├─ Path Planner (A*)      |        |   ├─ Motion Controller      |        |   ├─ Motion Controller      |
+|   ├─ Comm Node (LoRa)       |        |   ├─ Comm Node (LoRa)       |        |   ├─ Comm Node (LoRa)       |
++-----------------------------+        +-----------------------------+        +-----------------------------+
+</code></pre>
+</section>
+<hr class="section-divider">
+<section>
+<h2>Market Scope</h2>
+<p>A <b>$6B global SAM</b> in disaster robotics with a projected <b>$100M SOM</b> across India and Southeast Asia.</p>
+</section>
+<hr class="section-divider">
+<section>
+<h2>Revenue Model</h2>
+<ul>
+<li>Hardware sales</li>
+<li>Software licensing</li>
+<li>Maintenance + training</li>
+<li>Custom deployments</li>
+<li>Analytics + data insights</li>
+</ul>
+</section>
+<hr class="section-divider">
+<section>
+<h2>Tech Stack</h2>
+<p><b>Languages:</b> Python, C, C++<br>
+<b>Frameworks:</b> ROS, OpenCV, Flask, PyTorch<br>
+<b>Hardware:</b> Raspberry Pi, LoRa, thermal sensors<br>
+<b>Simulation:</b> Gazebo, RViz<br>
+<b>Communication:</b> LoRa Mesh, MQTT<br>
+<b>Tools:</b> Git, Docker, Linux</p>
+</section>
+<hr class="section-divider">
+<section>
+<h2>Autonomy & Power Management</h2>
+<h3>Drone Behavior States</h3>
+<ul>
+<li><b>Loiter Mode:</b> Hover relay + scanning.</li>
+<li><b>Redeploy Mode:</b> Move to next zone.</li>
+<li><b>Exit Mode:</b> Return-to-base at ≤30% battery.</li>
+</ul>
+<h3>Crawler Battery Logic</h3>
+<ul>
+<li>>40%: exploration</li>
+<li>40–25%: relay node</li>
+<li><25%: hibernate</li>
+</ul>
+</section>
+<hr class="section-divider">
+<section>
+<h2>Links</h2>
+<p>
+<a href="https://www.linkedin.com/in/rayvn-tech-424796390/" target="_blank">LinkedIn</a><br>
+<a href="https://github.com/Rayvn-Tech" target="_blank">GitHub</a>
+</p>
+</section>
+<p style="text-align:center;color:#888;margin-top:4rem;font-style:italic;">When networks go silent, our bots speak.</p>
+</main>
 </body>
 </html>
